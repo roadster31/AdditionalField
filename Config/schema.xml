@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="thelia"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../core/vendor/propel/propel/resources/xsd/database.xsd" >
+
+    <table name="product_additional_information" namespace="AdditionalField\Model">
+        <column autoIncrement="true" name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="object_id" required="true" type="INTEGER" />
+        <column name="information" type="CLOB" />
+
+        <foreign-key foreignTable="product" name="fk_product_additional_information_product_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="object_id" />
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="information" />
+        </behavior>
+    </table>
+
+    <table name="folder_additional_information" namespace="AdditionalField\Model">
+        <column autoIncrement="true" name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="object_id" required="true" type="INTEGER" />
+        <column name="information" type="CLOB" />
+
+        <foreign-key foreignTable="folder" name="fk_folder_additional_information_folder_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="object_id" />
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="information" />
+        </behavior>
+    </table>
+
+    <table name="category_additional_information" namespace="AdditionalField\Model">
+        <column autoIncrement="true" name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="object_id" required="true" type="INTEGER" />
+        <column name="information" type="CLOB" />
+
+        <foreign-key foreignTable="category" name="fk_category_additional_information_category_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="object_id" />
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="information" />
+        </behavior>
+    </table>
+
+    <table name="content_additional_information" namespace="AdditionalField\Model">
+        <column autoIncrement="true" name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="object_id" required="true" type="INTEGER" />
+        <column name="information" type="CLOB" />
+
+        <foreign-key foreignTable="content" name="fk_content_additional_information_content_id" onDelete="CASCADE" onUpdate="RESTRICT">
+            <reference foreign="id" local="object_id" />
+        </foreign-key>
+
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="information" />
+        </behavior>
+    </table>
+
+    <external-schema filename="local/config/schema.xml" referenceOnly="true" />
+</database>

@@ -1,0 +1,8 @@
+{custom_render_form_field field='additional_field_1'}
+    {loop type="lang" name="default-lang" id=$edit_language_id}
+        <div class="input-group">
+            <input {form_field_attributes field='additional_field_1' value=$additional_field_1_value}>
+            <span class="input-group-addon"><img src="{image file="assets/img/flags/{$CODE}.png"}" alt="{$TITLE}" /></span>
+        </div>
+    {/loop}
+{/custom_render_form_field}

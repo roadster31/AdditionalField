@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <loops>
+        <loop name="additional_field.get" class="AdditionalField\Loop\AdditionalFieldLoop" />
+    </loops>
+
+    <services>
+        <service id="additional_field.listener" class="AdditionalField\EventListeners\ListenerManager" scope="request">
+            <argument type="service" id="mailer"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+
+    <hooks>
+        <hook id="additional_field.product_edit.hook" class="AdditionalField\Hook\HookManager" scope="request">
+            <tag name="hook.event_listener" event="product.modification.form-right.bottom" type="back" method="onProductEditRightColumnBottom" />
+        </hook>
+        <hook id="additional_field.category_edit.hook" class="AdditionalField\Hook\HookManager" scope="request">
+            <tag name="hook.event_listener" event="category.modification.form-right.bottom" type="back" method="onCategoryEditRightColumnBottom" />
+        </hook>
+        <hook id="additional_field.content_edit.hook" class="AdditionalField\Hook\HookManager" scope="request">
+            <tag name="hook.event_listener" event="content.modification.form-right.bottom" type="back" method="onContentEditRightColumnBottom" />
+        </hook>
+        <hook id="additional_field.folder_edit.hook" class="AdditionalField\Hook\HookManager" scope="request">
+            <tag name="hook.event_listener" event="folder.modification.form-right.bottom" type="back" method="onFolderEditRightColumnBottom" />
+        </hook>
+    </hooks>
+</config>

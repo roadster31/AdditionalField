@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://thelia.net/schema/dic/module"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_2.xsd">
+    <fullnamespace>AdditionalField\AdditionalField</fullnamespace>
+    <descriptive locale="en_US">
+        <title>This module manage an additional field for product, categories, contents and folders</title>
+    </descriptive>
+    <descriptive locale="fr_FR">
+        <title>Ce module gère un champ supplémentaire pour les produits, les categories, les contenus et les dossiers.</title>
+    </descriptive>
+    <languages>
+        <language>en_US</language>
+        <language>fr_FR</language>
+    </languages>
+    <version>1.0.0</version>
+    <authors>
+        <author>
+            <name>Franck Allimant</name>
+            <company>CQFDev</company>
+            <email>thelia@cqfdev.fr</email>
+        </author>
+    </authors>
+    <type>classic</type>
+    <thelia>2.3.3</thelia>
+    <stability>other</stability>
+</module>
